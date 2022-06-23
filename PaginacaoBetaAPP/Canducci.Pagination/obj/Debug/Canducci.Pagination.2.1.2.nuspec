@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Canducci.Pagination</id>
+    <version>2.1.2</version>
+    <authors>Canducci</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/fulviocanducci/Canducci.Paginated</projectUrl>
+    <description>Note: based on repository https://github.com/TroyGoode/PagedList</description>
+    <copyright>Canducci</copyright>
+    <tags>Paginated</tags>
+    <repository type="https://github.com/fulviocanducci/Canducci.Paginated" url="https://github.com/fulviocanducci/Canducci.Paginated" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.1" />
+      <group targetFramework=".NETFramework4.6.1" />
+      <group targetFramework=".NETStandard1.6">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Linq.Queryable" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Sistemas\Git\PaginacaoBeta\PaginacaoBetaAPP\Canducci.Pagination\bin\Debug\net451\Canducci.Pagination.dll" target="lib\net451\Canducci.Pagination.dll" />
+    <file src="C:\Sistemas\Git\PaginacaoBeta\PaginacaoBetaAPP\Canducci.Pagination\bin\Debug\net461\Canducci.Pagination.dll" target="lib\net461\Canducci.Pagination.dll" />
+    <file src="C:\Sistemas\Git\PaginacaoBeta\PaginacaoBetaAPP\Canducci.Pagination\bin\Debug\netstandard1.6\Canducci.Pagination.dll" target="lib\netstandard1.6\Canducci.Pagination.dll" />
+    <file src="C:\Sistemas\Git\PaginacaoBeta\PaginacaoBetaAPP\Canducci.Pagination\bin\Debug\netstandard2.0\Canducci.Pagination.dll" target="lib\netstandard2.0\Canducci.Pagination.dll" />
+    <file src="C:\Sistemas\Git\PaginacaoBeta\PaginacaoBetaAPP\Canducci.Pagination\bin\Debug\netstandard2.1\Canducci.Pagination.dll" target="lib\netstandard2.1\Canducci.Pagination.dll" />
+  </files>
+</package>

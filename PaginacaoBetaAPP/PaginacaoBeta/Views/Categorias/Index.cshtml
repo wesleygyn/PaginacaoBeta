@@ -1,0 +1,96 @@
+﻿@model PaginacaoBeta.Models.Paginacao
+
+@*@model X.PagedList.IPagedList<PaginacaoBeta.Models.Paginacao>*@
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Bootstrap4.Core
+@using X.PagedList.Mvc.Bootstrap4
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container"> 
+
+    <h1>Categorias</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Novo</a>
+    </p>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            <b>Lista de categorias</b>
+                        </h4>
+                    </div>
+
+                    <table id="bootstrap-table" class="table">
+                        <thead>
+                        <th data-field="Descricao" data-sortable="true">Descrição</th>
+                        <th class="td-actions text-right">Ações</th>
+                        </thead>
+                        <tbody>                                
+                            @foreach (var item in Model.Items) {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descricao)
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
+                                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.CategoriaId">Detalhe</a> |
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CategoriaId">Delete</a>
+                                    </td>
+                                </tr>
+                            }   
+                        </tbody>
+                    </table>
+                    <br />
+                    <div>
+                                                                   
+                        @*@Html.PagedListPager((IPagedList)Model, pagina => Url.Action("Index", new { current = pagina }), Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)*@
+
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/jquery-ui.min.js"></script>
+<script src="~/js/bootstrap-table.js"></script>
+<script src="~/js/jquery.datatables.js"></script>
+
+<script type="text/javascript">
+
+    var $table = $('#bootstrap-table');
+
+    $().ready(function () {
+
+        $table.bootstrapTable({
+            toolbar: ".toolbar",
+            clickToSelect: true,
+            showRefresh: true,
+            search: true,
+            showToggle: true,
+            showColumns: true,
+            searchAlign: 'left',
+            clickToSelect: false,
+            icons: {
+                refresh: 'fa fa-refresh',
+                toggle: 'fa fa-th-list',
+                columns: 'fa fa-columns',
+                detailOpen: 'fa fa-plus-circle',
+                detailClose: 'ti-close'
+            }
+        });
+    });
+
+</script>
